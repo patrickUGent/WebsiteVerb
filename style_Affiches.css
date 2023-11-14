@@ -1,0 +1,178 @@
+/* Basisopmaak */
+body {
+    background-color: black;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+
+
+/* Container voor linker- en rechterdeel */
+.container {
+    display: flex;
+    /* Hiermee worden de kinderen (linker- en rechterdeel) naast elkaar geplaatst */
+    height: 100vh;
+}
+
+
+/* Het linkerdeel (30% breedte) */
+.left-side {
+
+    color: rgba(186, 146, 16, 0.9);
+    text-align: center;
+    width: 30%;
+    background-color: black;
+    overflow: auto;
+    height: 100vh;
+}
+
+.img1 {
+    padding: 0px 70px 0px;
+    width: 50%;
+}
+
+/* Middenvlak scrolbaar*/
+.middle-scroll {
+    padding-top: 0px;
+    width: 80%;
+    padding-left: 20px;
+    background-color: white;
+    color: black;
+    overflow: auto;
+    height: 100%;
+    /* padding: 0px  ; */
+}
+/* Middenvlak opmaak*/
+
+input[type="text"] {
+    width: 500px; /* Stel de breedte van het invoerveld in (pas deze waarde aan zoals nodig) */
+
+}
+
+.error {
+    color: red;
+    font-size: 80%;
+}
+
+label {
+    display: inline-block;
+  
+    width: 200px;
+}
+
+  /* CSS-styling voor het evenementkeuze selectie-element */
+  #evenementKeuze {    
+    width: 85%; /* Pas de breedte hier aan, bijvoorbeeld in pixels (px) */
+}
+
+    /* CSS-styling voor de knop */
+    #knop_verstuur {
+        font-size: 18px;
+        display: block; /* Zorg ervoor dat de knop een block-element is */
+        width: 220px; /* Pas de breedte van de knop aan aan jouw voorkeur */
+        padding: 10px 15px; /* Voeg wat padding toe voor ruimte rond de tekst in de knop */
+        border-radius: 5px; /* Maak afgeronde hoeken (pas de waarde aan indien nodig) */
+        background-color:rgb(191, 103, 10);;/* Achtergrondkleur van de knop */
+        color: #fff; /* Tekstkleur van de knop */
+        text-align: center; /* Centreer de tekst in de knop */
+        text-decoration: none; /* Verwijder standaard onderstreping van koppelingen (optioneel) */
+        float: right; /* Verplaats de knop naar rechts met behulp van de "float" eigenschap */
+    }
+
+
+.blok {
+    /* zet maps een teksvlak naast elkaar met tussenruimte*/
+    margin-left: 120px;
+
+}
+/* Het rechterdeel (70% breedte) */
+.right-side {
+    color: white;
+    font-weight: bold;
+width: 20%;
+    overflow: auto;
+    height: 100%;
+    padding: 0px;
+    text-align: center;
+   
+    overflow-x: hidden;
+    /* Voorkom horizontaal scrollen */
+    overflow-y: auto;
+    /* Sta verticaal scrollen toe als de inhoud te lang is */
+}
+
+.pano {
+    padding: 10px 60px 5px;
+    width: 80%;
+}
+
+.menu-item {
+    text-decoration: none;
+    /* Verwijder onderstreping van links */
+    transition: color .3s ease, text-shadow .3s ease, font-weight 50ms ease-in-out;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu-item-selected {
+    background-color: rgb(191, 103, 10);
+    transition: background-color .3s ease, text-shadow .3s ease, font-weight 50ms ease-in-out;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1rem 2rem;
+    /* Hier heb ik de rechter- en linker-padding versmald */
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.menu-item-text:hover {
+    color: rgb(191, 103, 10);
+
+    /* Pas de gewenste kleur toe bij mouse-over */
+}
+
+.menu-item-text {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: wheat;
+    /* Standaard tekstkleur */
+    transition: color 0.3s;
+    /* Voeg een overgangseffect toe voor kleurverandering */
+}
+/*Verwijdert dots in het menu*/
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    background: white;
+    /*Witte achtergrond voor footer*/
+}
+
+footer h6 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 90%;
+}
+
+#formulier {
+    padding: 10px 30px;
+}
+
+
+
+
+

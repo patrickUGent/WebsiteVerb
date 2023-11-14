@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-34X6L9KC35"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-34X6L9KC35');
+</script>          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="style.css"> 
+      <link rel="stylesheet" type="text/css" href="style_Affiches.css">     
+    
+        <meta name="description" content="Bekijk hier de affiches van onze wintertornooien!" />
+     
+    <title>Affiches</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-side">
+            <!-- Inhoud voor het linkerdeel -->
+           
+            <ul>
+                <li class="wnd-active   wnd-homepage">
+                    <a class="menu-item" href="/index.html"><span class="menu-item-text">Uitslagen &
+                            Klassement</span></a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="/competitie woensdag.html"><span class="menu-item-text">Kalender
+                            woensdag</span></a>
+                </li>
+                <li>
+                    <a class="menu-item" href="/competitie zondag.html"><span class="menu-item-text">Kalender
+                            zondag</span></a>
+                </li>
+                <li>
+                    <a class="menu-item" href="/teams.html"><span class="menu-item-text">Teams</span></a>
+                </li>
+                <li>
+                    <a class="menu-item" href="/maandblad.html"><span class="menu-item-text">Maandblad</span></a>
+                </li>
+                <li>
+                    <a class="menu-item-selected" href="/affiches.html"><span class="menu-item-text">Affiches</span></a>
+                              </li>
+                <li>
+                    <a class="menu-item" href="/contact.html"><span class="menu-item-text">Contact</span></a>
+                </li>
+
+                <li>
+                    <a class="menu-item" href="/afbeeldingen.html"><span class="menu-item-text">Afbeeldingen</span></a>
+                </li>
+              
+            </ul>
+            <img class="img1" src="img/PC_Boules.png" alt="Boules">
+            <h1>Verbroedering</h1>
+        </div>
+        <!-- Inhoud midden (60% breedte) -->
+        <div class="middle-scroll">      
+            <img class="pano" src="img/header.jpg" alt="Header">
+
+
+            <form id="formulier">
+                <p>
+                    <label for="naamkapitein">Naam kapitein:</label><input type="text"  id="naamkapitein"/>
+                    <span class="error" id="naamkapitein_error"></span>
+                </p>
+                <p>
+                    <label for="email">Email:</label><input type="text"  id="email"/>
+                    <span class="error" id="email_error"></span>
+                </p>
+                <p>
+                    <label for="telefoon">Telefoon:</label><input type="text"  id="telefoon"/>
+                    <span class="error" id="telefoon_error"></span>
+                </p>
+                <p>
+                    <label for="speler1">Speler1:</label> <input type="text"  id="speler1"/>
+                    <span class="error" id="speler1_error"></span>
+                </p>
+                <p>
+                    <label for="speler2">Speler2:</label><input type="text" id="speler2"/>
+                    <span class="error" id="speler2_error"></span>
+                </p>
+                <p>
+                    <label for="speler3">Speler3:</label><input type="text"  id="speler3"/>
+                    <span class="error" id="speler3_error"></span>
+                </p>
+                <p>
+                    <label for="evenement" style="margin-bottom: 10px;"><b>Kies een evenement:</b></label>
+                    <select name="evenement" id="evenement">
+                        <option value="" selected disabled>Kies een evenement:</option>
+                        <option value="11/11/2023: Happy Halloween (Enkel voor leden)">11/11/2023: Happy Halloween (Enkel voor leden)</option>
+                        <option value="07/03/2024: 50 plus Doubletten gemengd">07/03/2024: 50 plus Doubletten gemengd</option>
+                        <option value="16/03/2024: All.Cat.Dames triple">16/03/2024: All.Cat.Dames triplet</option>
+                        <option value="10/04/2024: 50 plus triplet H/HG">10/04/2024: 50 plus triplet H/HG</option>
+                        <option value="27/04/2024: 50 plus Doubletten H/HG">27/04/2024: 50 plus Doubletten H/HG</option>
+                        
+                    </select>
+                    <span class="error" id="evenement_error"></span>
+                </p>  
+                <p>
+                    <input type="button" value="Verstuur" id="knop_verstuur" onclick="verstuur()" />
+                </p>
+            </form>
+        
+            <script type="text/javascript">
+                "use strict";
+                let naamkapiteinTxt;
+                let speler1Txt;
+                let speler2Txt;
+                let speler3Txt;
+                let telefoonTxt;
+                let emailTxt;
+                let geselecteerdEvenement;
+            let evenementTxt;
+                let allesCorrectIngevuld = true;
+        
+                function controleerVoorwaardenNaamkapitein() {
+                    if (naamkapiteinTxt.length < 2) {
+                        document.getElementById("naamkapitein_error").innerHTML = "Minstens 2 karakters lang!";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("naamkapitein_error").innerHTML = "";
+                    }
+                }
+        
+                function controleerVoorwaardenspeler1() {
+                    if (speler1Txt.length < 2) {
+                        document.getElementById("speler1_error").innerHTML = "Minstens 2 karakters lang!";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("speler1_error").innerHTML = "";
+                    }
+                }
+        
+                function controleerVoorwaardenspeler2() {
+                    if (speler2Txt.length < 2) {
+                        document.getElementById("speler2_error").innerHTML = "Minstens 2 karakters lang!";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("speler2_error").innerHTML = "";
+                    }
+                }
+        
+                function controleerVoorwaardenspeler3() {
+                    if (speler3Txt.length < 1) {
+                        document.getElementById("speler3_error").innerHTML = "Minstens 1 cijfer!";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("speler3_error").innerHTML = "";
+                    }
+                }
+        
+                function controleerVoorwaardentelefoon() {
+            // Updated regular expression for a broader phone number format
+            let regExp = /^[0-9/]+$/;                    
+            if (!regExp.test(telefoonTxt)) {
+                document.getElementById("telefoon_error").innerHTML = "Ongeldige telefoonnummer!";
+                allesCorrectIngevuld = false;
+            } else {
+                document.getElementById("telefoon_error").innerHTML = "";
+            }
+        }
+                                function controleerVoorwaardenEmail() {
+                    let regExp = /^[A-Za-z][\.A-Za-z0-9+_-]+@[\.A-Za-z0-9-]+\.[A-Za-z]{2,20}$/;
+                    if (regExp.test(emailTxt) == false) {
+                        document.getElementById("email_error").innerHTML = "Dit is niet correct!";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("email_error").innerHTML = "";
+                    }
+                }
+        
+                function verstuur() {
+                    naamkapiteinTxt = document.getElementById("naamkapitein").value;
+                    speler1Txt = document.getElementById("speler1").value;
+                    speler2Txt = document.getElementById("speler2").value;
+                    speler3Txt = document.getElementById("speler3").value;
+                    telefoonTxt = document.getElementById("telefoon").value;
+                    emailTxt = document.getElementById("email").value;
+                evenementTxt=document.getElementById("evenement").value
+                    geselecteerdEvenement = document.getElementById("evenement").value;
+                    allesCorrectIngevuld = true;
+        
+                    if (naamkapiteinTxt.length == 0) {
+                        document.getElementById("naamkapitein_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardenNaamkapitein();
+                    }
+        
+                    if (speler1Txt.length == 0) {
+                        document.getElementById("speler1_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardenspeler1();
+                    }
+        
+                    if (speler2Txt.length == 0) {
+                        document.getElementById("speler2_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardenspeler2();
+                    }
+        
+                    if (speler3Txt.length == 0) {
+                        document.getElementById("speler3_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardenspeler3();
+                    }
+        
+                    if (telefoonTxt.length == 0) {
+                        document.getElementById("telefoon_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardentelefoon();
+                    }
+        
+                    if (emailTxt.length == 0) {
+                        document.getElementById("email_error").innerHTML = "Vul in a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        controleerVoorwaardenEmail();
+                    }
+        
+                    if (geselecteerdEvenement == 0) {
+                        document.getElementById("evenement_error").innerHTML = "Kies a.u.b.";
+                        allesCorrectIngevuld = false;
+                    } else {
+                        document.getElementById("evenement_error").innerHTML = "";
+                    }
+                }
+                    // Check if allesCorrectIngevuld is still true before submitting
+                    document.getElementById("knop_verstuur").addEventListener("click", function() {
+                    // Your existing validation code here
+                    
+                    if (allesCorrectIngevuld) {
+                        // Create a mailto link with multiple recipients
+                        let recipients = "patrick.geys2@telenet.be,pcverbroedering@outlook.be";
+                        let mailtoLink = "mailto:" + recipients +
+                            "?subject=Formulier validatie" +
+                            "&body=" +
+                            "Naam kapitein: " + naamkapiteinTxt + "%0D%0A" +
+                            "Speler1: " + speler1Txt + "%0D%0A" +
+                            "Speler2: " + speler2Txt + "%0D%0A" +
+                            "Speler3: " + speler3Txt + "%0D%0A" +
+                            "Telefoon: " + telefoonTxt + "%0D%0A" +
+                            "Email: " + emailTxt + "%0D%0A" +
+                            "Evenement: " + geselecteerdEvenement;
+        
+                        // Open the email client with the pre-filled email
+                        window.location.href = mailtoLink;
+                    }
+                });
+                // Voeg deze code toe aan het einde van je bestaande script
+document.getElementById("knop_verstuur").addEventListener("click", function() {
+    // Je bestaande validatiecode hier
+
+    if (allesCorrectIngevuld) {
+        // Maak de gegevensvelden leeg
+        document.getElementById("formulier").reset();
+
+        // Je bestaande code om de e-mail te verzenden hier
+
+        // Optioneel: voeg een bevestiging toe dat het formulier is verzonden
+        alert("Formulier is succesvol verzonden!");
+    }
+});
+
+            </script>
+
+        <!-- Inhoud rechts (60 -->     
+        </div>
+        <div class="right-side">
+                
+            </div>
+            <!-- <iframe name="pdf_frame" width="80%" height="900" style="border: none;" src="affiches/gecombineerd.pdf"></iframe> -->
+            <iframe id="pdf_frame" name="pdf_frame" width="80%" style="border: none;" src="affiches/wintertornooien.pdf"></iframe>
+
+        </div>                     
+  </body>
+</html>
